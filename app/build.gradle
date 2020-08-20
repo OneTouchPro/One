@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "in.prali.one"
+//        applicationId "in.prali.one"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
