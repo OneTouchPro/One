@@ -11,11 +11,11 @@ public class OneProgress {
         mProgress.setMessage(" Please wait...");
         mProgress.setCancelable(false);
     }
-    public void Show(){
+    public void show(){
         mProgress.show();
     }
 
-    public void Dismiss(){
+    public void dismiss(){
         mProgress.dismiss();
     }
 }
