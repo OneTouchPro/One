@@ -17,6 +17,7 @@ public class OneAlert {
         new AlertDialog.Builder(MyContext)
                 .setTitle(Title)
                 .setMessage(Message)
+                .setCancelable(Cancelable)
                 .setPositiveButton(PositiveText, onPositiveClickListener)
                 .setNegativeButton(NegativeText, onNegativeClickListener)
                 .create()
@@ -27,6 +28,7 @@ public class OneAlert {
         new AlertDialog.Builder(MyContext)
                 .setTitle(Title)
                 .setMessage(Message)
+                .setCancelable(Cancelable)
                 .setPositiveButton(PositiveText, onPositiveClickListener)
                 .create()
                 .show();
