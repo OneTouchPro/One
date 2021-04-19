@@ -9,4 +9,5 @@ public class OneToast {
 
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
+
 }
