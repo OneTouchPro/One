@@ -33,7 +33,7 @@ public class OneConversion {
         return calendar.getTime();
     }
 
-    public String IntegerToCommaString(Integer integer) {
+    public static String IntegerToCommaString(Integer integer) {
         DecimalFormat formatter = new DecimalFormat("##,##,##,###");
         return formatter.format(integer);
     }
