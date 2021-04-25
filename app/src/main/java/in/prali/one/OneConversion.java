@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 
 import com.google.firebase.Timestamp;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -30,5 +31,10 @@ public class OneConversion {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
+    }
+
+    public String IntegerToCommaString(Integer integer) {
+        DecimalFormat formatter = new DecimalFormat("##,##,##,###");
+        return formatter.format(integer);
     }
 }
