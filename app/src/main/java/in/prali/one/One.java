@@ -14,17 +14,20 @@ public class One {
     public One() {
     }
 
-    public void CopyToClipBoard(String lable, String text) {
+    public void CopyToClipBoard(Context context, String lable, String text) {
+        this.context=context;
         ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText(lable, text);
         clipboard.setPrimaryClip(clip);
     }
 
-    public void Toast(String message) {
+    public void Toast(Context context, String message) {
+        this.context=context;
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
-    public String Version(){
+    public String Version(Context context){
+        this.context=context;
         String version = null;
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
