@@ -14,13 +14,13 @@ fun Context.OneToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()
 }
 
-fun Context.CopyToClipBoard(label: String?, text: String?) {
+fun Context.OneCopyToClipBoard(label: String?, text: String?) {
     val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     val clip = ClipData.newPlainText(label, text)
     clipboard.setPrimaryClip(clip)
 }
 
-fun Context.Version(): String? {
+fun Context.OneVersion(): String? {
     var version: String? = null
     try {
         val pInfo = packageManager.getPackageInfo(packageName, 0)
@@ -31,7 +31,7 @@ fun Context.Version(): String? {
     return version
 }
 
-fun TextBlink(textView: TextView, SecondsToBlink: Int) {
+fun OneTextBlink(textView: TextView, SecondsToBlink: Int) {
     val handler = Handler(Looper.myLooper()!!)
     Thread {
         try {
@@ -45,7 +45,7 @@ fun TextBlink(textView: TextView, SecondsToBlink: Int) {
             } else {
                 textView.visibility = View.VISIBLE
             }
-            TextBlink(textView, SecondsToBlink)
+            OneTextBlink(textView, SecondsToBlink)
         }
     }.start()
 }
