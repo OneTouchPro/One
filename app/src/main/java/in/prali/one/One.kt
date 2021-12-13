@@ -3,12 +3,18 @@ package `in`.prali.one
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.squareup.picasso.Picasso
 
 fun Context.OneToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()
@@ -49,3 +55,21 @@ fun OneTextBlink(textView: TextView, SecondsToBlink: Int) {
         }
     }.start()
 }
+
+fun Context.OneOpenURL(linkURL: String?) {
+    val inte = Intent(Intent.ACTION_VIEW)
+    inte.data = Uri.parse(linkURL)
+    startActivity(inte)
+}
+
+fun Context.OneHideKeyBoard(view: View) {
+    val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromWindow(view.windowToken, 0)
+    view.clearFocus()
+}
+
+fun Context.OneLoadImage(imageURL: String?, view: ImageView) {
+    Picasso.get().load(imageURL).into(view)
+}
+
+
