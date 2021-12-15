@@ -73,7 +73,7 @@ fun Context.OneLoadImage(imageURL: String?, view: ImageView) {
     Picasso.get().load(imageURL).into(view)
 }
 
-fun Context.OneLaunchSmoothActivity(clas: Class<*>?) {
+fun Context.OneLaunchActivity(clas: Class<*>?) {
     startActivity(Intent(this, clas))
     (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
 }
