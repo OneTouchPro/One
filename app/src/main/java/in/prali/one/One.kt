@@ -1,6 +1,7 @@
 package `in`.prali.one
 
 import android.app.Activity
+import android.app.Application
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -73,13 +74,7 @@ fun Context.OneLoadImage(imageURL: String?, view: ImageView) {
     Picasso.get().load(imageURL).into(view)
 }
 
-fun Context.OneLaunchActivity(clas: Class<*>?) {
-    startActivity(Intent(this, clas))
-    (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
-}
-
-fun Context.OneFinishActivity() {
-    (applicationContext as Activity).finish()
+fun Context.OneSmoothActivity() {
     (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
 }
 
