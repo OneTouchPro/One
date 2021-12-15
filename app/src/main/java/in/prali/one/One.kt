@@ -78,5 +78,10 @@ fun Context.OneLaunchActivity(clas: Class<*>?) {
     (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
 }
 
+fun Context.OneFinishActivity() {
+    (applicationContext as Activity).finish()
+    (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
+}
+
 
 
