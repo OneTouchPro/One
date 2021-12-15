@@ -1,5 +1,6 @@
 package `in`.prali.one
 
+import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -71,5 +72,11 @@ fun Context.OneHideKeyBoard(view: View) {
 fun Context.OneLoadImage(imageURL: String?, view: ImageView) {
     Picasso.get().load(imageURL).into(view)
 }
+
+fun Context.OneLaunchSmoothActivity(clas: Class<*>?) {
+    startActivity(Intent(this, clas))
+    (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
+}
+
 
 
