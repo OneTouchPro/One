@@ -73,10 +73,10 @@ fun Context.OneHideKeyBoard(view: View) {
 fun Context.OneLoadImage(imageURL: String?, view: ImageView) {
     Picasso.get().load(imageURL).into(view)
 }
-
-fun Context.OneSmoothActivity() {
-    (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
-}
+//
+//fun Context.OneSmoothActivity() {
+//    (applicationContext as Activity).overridePendingTransition(0, android.R.anim.fade_out)
+//}
 
 
 
